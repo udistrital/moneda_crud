@@ -1,0 +1,292 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /tipo_moneda/:
+    get:
+      tags:
+      - tipo_moneda
+      description: get TipoMoneda
+      operationId: TipoMonedaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoMoneda'
+        "403":
+          description: ""
+    post:
+      tags:
+      - tipo_moneda
+      description: create TipoMoneda
+      operationId: TipoMonedaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for TipoMoneda content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoMoneda'
+      responses:
+        "201":
+          description: '{int} models.TipoMoneda'
+        "403":
+          description: body is empty
+  /tipo_moneda/{id}:
+    get:
+      tags:
+      - tipo_moneda
+      description: get TipoMoneda by id
+      operationId: TipoMonedaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoMoneda'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - tipo_moneda
+      description: update the TipoMoneda
+      operationId: TipoMonedaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for TipoMoneda content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoMoneda'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoMoneda'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - tipo_moneda
+      description: delete the TipoMoneda
+      operationId: TipoMonedaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /trm/:
+    get:
+      tags:
+      - trm
+      description: get Trm
+      operationId: TrmController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Trm'
+        "403":
+          description: ""
+    post:
+      tags:
+      - trm
+      description: create Trm
+      operationId: TrmController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Trm content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Trm'
+      responses:
+        "201":
+          description: '{int} models.Trm'
+        "403":
+          description: body is empty
+  /trm/{id}:
+    get:
+      tags:
+      - trm
+      description: get Trm by id
+      operationId: TrmController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Trm'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - trm
+      description: update the Trm
+      operationId: TrmController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Trm content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Trm'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Trm'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - trm
+      description: delete the Trm
+      operationId: TrmController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+definitions:
+  models.TipoMoneda:
+    title: TipoMoneda
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      CodigoAbreviacion:
+        type: string
+      Descripcion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+      NumeroOrden:
+        type: number
+        format: double
+  models.Trm:
+    title: Trm
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      CodigoAbreviacion:
+        type: string
+      Descripcion:
+        type: string
+      FechaAplicaTrm:
+        type: string
+        format: string
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+      TipoMoneda:
+        $ref: '#/definitions/models.TipoMoneda'
+      ValorTrm:
+        type: number
+        format: double
+tags:
+- name: tipo_moneda
+  description: |
+    TipoMonedaController operations for TipoMoneda
+- name: trm
+  description: |
+    TrmController operations for Trm
